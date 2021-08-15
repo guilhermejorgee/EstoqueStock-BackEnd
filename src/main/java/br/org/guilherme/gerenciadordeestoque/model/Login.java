@@ -2,7 +2,7 @@ package br.org.guilherme.gerenciadordeestoque.model;
 
 public class Login {
 	
-	Long id;
+	private Long id;
 	
 	private String nome;
 	

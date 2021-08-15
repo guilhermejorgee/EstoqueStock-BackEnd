@@ -36,9 +36,6 @@ public class Usuario {
 	
 	private String foto;
 	
-	/*@OneToMany(mappedBy = "estoque", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("usuario")
-	private List<Estoque> estoque;*/
 	
 	@ManyToMany
 	@JsonIgnoreProperties("usuarios")

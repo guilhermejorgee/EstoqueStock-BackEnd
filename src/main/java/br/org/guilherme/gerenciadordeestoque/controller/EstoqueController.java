@@ -49,6 +49,30 @@ public class EstoqueController {
 	public ResponseEntity<List<Estoque>> exibirValorUnit(@PathVariable double valorUnit){
 		return ResponseEntity.ok(estoqueService.pesquisarPorValorUnit(valorUnit));
 	}
+	
+	@PostMapping("/consumopadrao/{id}")
+	public ResponseEntity<Integer> consumoPadrao(@PathVariable long id){
+		
+		return ResponseEntity.ok(estoqueService.calculoConsumoPadraoMaterial(id));
+	}
+	
+	@PostMapping("/estsegpadrao/{id}")
+	public ResponseEntity<Integer> estSegPadrao(@PathVariable long id){
+		
+		return ResponseEntity.ok(estoqueService.estoqueSegurancaPadrao(id));
+	}
+	
+	@PostMapping("/tempopedidocomseg/{id}")
+	public ResponseEntity<Integer> tempPedComSeg(@PathVariable long id){
+		
+		return ResponseEntity.ok(estoqueService.PontodePedidoPadraoComSeguranca(id));
+	}
+	
+	@PostMapping("/tempopedidosemseg/{id}")
+	public ResponseEntity<Integer> tempPedSemSeg(@PathVariable long id){
+		
+		return ResponseEntity.ok(estoqueService.PontodePedidoPadraoSemSeguranca(id));
+	}
 		
 	
 	@PostMapping("/{idUsuario}")
@@ -93,6 +117,10 @@ public class EstoqueController {
 			return ResponseEntity.badRequest().build();
 		return ResponseEntity.status(HttpStatus.OK).body(estoqueService.atualizarCaracteristicas(material));
 	}
+	
+
+	
+	
 	
 	@DeleteMapping("/{id}")
 	public void deletarPorId(@PathVariable long id) {

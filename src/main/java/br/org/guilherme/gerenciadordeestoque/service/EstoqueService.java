@@ -260,6 +260,8 @@ public class EstoqueService {
 		material.setMovimentacao(estoque.getMovimentacao());
 
 		material.setCategoria(estoque.getCategoria());
+		
+		material.setQuantidade(estoque.getQuantidade());
 
 		return repository.save(material);
 
@@ -306,7 +308,15 @@ public class EstoqueService {
 		
 	}
 	
-	public int PontodePedidoPadrao(long id) {
+	public int PontodePedidoPadraoSemSeguranca(long id) {
+		
+		Estoque estoque = pesquisarMaterial(id);
+		
+		return (calculoConsumoPadraoMaterial(id) * estoque.getLeadtime());
+		
+	}
+	
+	public int PontodePedidoPadraoComSeguranca(long id) {
 		
 		Estoque estoque = pesquisarMaterial(id);
 		

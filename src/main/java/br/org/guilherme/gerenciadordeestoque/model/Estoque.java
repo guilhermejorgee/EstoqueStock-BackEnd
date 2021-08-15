@@ -43,13 +43,17 @@ public class Estoque {
 	@Column(columnDefinition = "decimal(6,2)")
 	private BigDecimal valorTotal;
 	
+	@NotNull
 	private Integer leadtime;
 	
+	@NotNull
 	private Integer tempoEntrega;
 	
-	private Integer estoqueMinimo;
-	
+	@NotNull
 	private Integer tempoConsumoPadrao;
+	
+	@NotNull
+	private Boolean comEstoqueSeguranca;
 
 	
 	@Size(max = 100)
@@ -65,14 +69,6 @@ public class Estoque {
 	@JsonIgnoreProperties("estoque")
 	private Categoria categoria;
 	
-	
-	public Integer getEstoqueMinimo() {
-		return estoqueMinimo;
-	}
-
-	public void setEstoqueMinimo(Integer estoqueMinimo) {
-		this.estoqueMinimo = estoqueMinimo;
-	}
 
 	public Long getId() {
 		return id;
@@ -170,6 +166,16 @@ public class Estoque {
 	public void setTempoEntrega(Integer tempoEntrega) {
 		this.tempoEntrega = tempoEntrega;
 	}
+
+	public Boolean getComEstoqueSeguranca() {
+		return comEstoqueSeguranca;
+	}
+
+	public void setComEstoqueSeguranca(Boolean comEstoqueSeguranca) {
+		this.comEstoqueSeguranca = comEstoqueSeguranca;
+	}
+	
+	
 	
 	
 	
