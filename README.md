@@ -32,7 +32,7 @@ Neste projeto foi utilizado todo conhecimento abordado no bootcamp da Generation
 	</tr>
 </table>
 
-<h3>Principais Funcionalidades Que Estão Sendo Implementadas</h3>
+<h3>Principais Funcionalidades Sendo Implementadas</h3>
 
 <ul>
   <li>Adicionar e Excluir Materiais</li>
