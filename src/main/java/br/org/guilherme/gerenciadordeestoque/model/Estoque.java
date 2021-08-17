@@ -69,6 +69,11 @@ public class Estoque {
 	@JsonIgnoreProperties("estoque")
 	private Categoria categoria;
 	
+	@NotNull
+	@ManyToOne
+	@JsonIgnoreProperties("estoque")
+	private Fornecedor fornecedor;
+	
 
 	public Long getId() {
 		return id;
@@ -173,6 +178,14 @@ public class Estoque {
 
 	public void setComEstoqueSeguranca(Boolean comEstoqueSeguranca) {
 		this.comEstoqueSeguranca = comEstoqueSeguranca;
+	}
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 	
 	
